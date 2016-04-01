@@ -40,7 +40,7 @@ This is empty on purpose! Your code to build the resume will go here.
 var bio = {
 	"name": "David Kennedy",
 	"role": "Web Developer",
-	"contact": {
+	"contacts": {
 		"mobile": "323-599-1774",
 		"email": "dkennedychicago@gmail.com",
 		"github": "dkennedychicago",
@@ -59,10 +59,10 @@ var education = {
 	"schools": [
 	{
 		"name": "University of California, UCLA",
-		"location": "Los Angeles",
-		"degree": "BA",
+		"city": "Los Angeles",
+		"degree": "Certificate",
 		"major": ["Entertainment Media (Cinematography)"],
-		"date": 2012,
+		"date": "2012 - 2012",
 		"url": "http://entertainment.uclaextension.edu/certificates/cinematography/"
 			
 	},
@@ -71,7 +71,7 @@ var education = {
 		"city": "Edinburgh, Scotland",
 		"degree": "B.Sc",
 		"major": ["Architectural Engineering"],
-		"date": 1992,
+		"date": "1992",
 		"url": "http://www.hw.ac.uk/undergraduate/architectural-engineering.htm"
 		
 	}
@@ -79,10 +79,11 @@ var education = {
 
 	"onlineCourses": [
 	{
-		"name": "Udacity",
-		"title": "Introduction to Programming - Nanodegree",
-		"dates": 2016,
-		"url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
+		"onlineClass": "Introduction to Programming",
+		"onlineTitle": "Udacity",
+		"onlineSchool": "Nanodegree",
+		"onlineDates": "2015-2016",
+		"onlineURL": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
 	}
 	]
 }
@@ -162,13 +163,13 @@ var projects = {
 		"title": "Cloud Atlas",
 		"date": 2012,
 		"description": "Worked as a VFX Editor on shots for Cloud Atlas where Gradient was tasked with augmenting the eyes of Rose, played by Xun Zhou.",
-		"images": "images/projects/cloudAtlas/cloudAtlasPoster.jpg"
+		"images": ["images/projects/cloudAtlas/cloudAtlasPoster.jpg"]
 	},
 	{
 		"title": "Identity Thief",
 		"date": 2013,
 		"description": "VFX Editor and I/O Coordinator on this hit comedy feature",
-		"images": "images/projects/identityThief/identityThiefPoster.jpg"
+		"images": ["images/projects/identityThief/identityThiefPoster.jpg"]
 	}
 	]
 
@@ -178,11 +179,11 @@ var projects = {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 
@@ -201,7 +202,7 @@ $("#topContacts").append(formattedbioPic);
 if(bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
 
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+  formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
   $("#skills").append(formattedSkill);
   formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
   $("#skills").append(formattedSkill);
@@ -232,31 +233,63 @@ displayWork();
 
 // PROJECTS
 
-// var displayProjects = function() {
 projects.display = function() {	
   for (project in projects.projects) {
 	$("#projects").append(HTMLprojectStart);
 
 	var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-	$(".projects-entry:last").append(formattedTitle);
-
 	var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].date); 
-	$(".projects-entry:last").append(formattedDates);
-	
 	var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-	$(".projects-entry:last").append(formattedDescription);
-
 	if (projects.projects[project].images.length > 0) {
 		for (image in projects.projects[project].images) {
 			var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-			$(".projects-entry:last").append(formattedImage);
 			}
 		}
 	var formattedProjects =	formattedTitle + formattedDates + formattedDescription + formattedImage;
-	$(".projects-entry:last").append(formattedProjects);
+	$(".project-entry:last").append(formattedProjects);
 	}
 }
 projects.display(); 
+
+
+// EDUCATION
+
+var displayEducation = function() {
+  for (school in education.schools) {
+    $("#education").append(HTMLschoolStart);
+      var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+      var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+      var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].date);
+      var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+      var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+      var formattedEducation = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
+      
+      $(".education-entry:last").append(formattedEducation);
+	}
+}
+displayEducation();
+
+var displayonlineCourses = function() {
+	for (courses in education.onlineCourses) {
+	    $("#onlineCourses").append(HTMLschoolStart);
+  		  var formattedonlineClasses = HTMLonlineClasses.replace("%data%", education.onlineCourses[courses].onlineClass);
+  		  var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[courses].onlineTitle);
+  		  var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[courses].onlineSchool);
+  		  var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[courses].onlineDates);
+  		  var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[courses].onlineURL);
+	  	  var formattedOnline = formattedonlineClasses + formattedonlineTitle + formattedonlineSchool + formattedonlineDates + formattedonlineURL;
+     	
+     	  $(".onlineCourses-entry:last").append(formattedOnline);
+	}
+}
+displayonlineCourses();
+
+
+
+
+
+
+
 
 $(document).click(function(loc) {
   var x = loc.pageX;
