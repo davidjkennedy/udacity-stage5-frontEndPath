@@ -234,30 +234,29 @@ displayWork();
 
 // var displayProjects = function() {
 projects.display = function() {	
-	for (project in projects.projects) {
-	  $("#projects").append(HTMLprojectStart);
+  for (project in projects.projects) {
+	$("#projects").append(HTMLprojectStart);
 
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-		$(".projects.projects-entry:last").append(formattedTitle);
-		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].date); 
-		$(".projects-entry:last").append(formattedDates);
-		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-		$(".projects-entry:last").append(formattedDescription);
+	var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+	$(".projects-entry:last").append(formattedTitle);
 
-		if (projects.projects[project].images.length > 0) {
-			for (image in projects.projects[project].images) {
-				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-				$(".projects-entry:last").append(formattedImage);
-		
-		var formattedProjects = formattedTitle + formattedDates + formattedDescription + formattedImage;
-		
-		$(".project-entry:last").append(formattedProjects);
+	var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].date); 
+	$(".projects-entry:last").append(formattedDates);
+	
+	var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+	$(".projects-entry:last").append(formattedDescription);
 
+	if (projects.projects[project].images.length > 0) {
+		for (image in projects.projects[project].images) {
+			var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+			$(".projects-entry:last").append(formattedImage);
 			}
 		}
+	var formattedProjects =	formattedTitle + formattedDates + formattedDescription + formattedImage;
+	$(".projects-entry:last").append(formattedProjects);
 	}
 }
-projects.display();
+projects.display(); 
 
 $(document).click(function(loc) {
   var x = loc.pageX;
@@ -278,17 +277,7 @@ var inName = function(name) {
 
 $("#main").append(internationalizeButton);
 
+// MAP
+$("#mapDiv").append(googleMap);
 
-// $("#main").append(work["position"]);
-// $("#main").append(education.name);
-// $("#main").append(bio.role);
-// $("#main").append(bio.contact.mobile);
-// $("#main").append(work.jobs);
-// $("#main").append(work['employer']);
-// $("#main").append(work['city']);
-// $("#main").append(education.schools[0].name);
-// $("#main").append(education.schools[1].name);
-// $("#main").append(education.nameOfSchool);
-// $("#main").append(work.jobs[1].employer);
-// $("#main").append(education.schools[1].name);
-// $("#main").append(work.jobs[0].description);
+
