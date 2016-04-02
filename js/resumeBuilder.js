@@ -61,7 +61,7 @@ var education = {
 		"name": "University of California, UCLA",
 		"location": "405 Hilgard Avenue, Los Angeles 90095",
 		"degree": "Certificate",
-		"major": ["Entertainment Media (Cinematography)"],
+		"majors": ["Entertainment Media (Cinematography)"],
 		"date": "2012 - 2012",
 		"url": ["http://entertainment.uclaextension.edu/certificates/cinematography/"]
 			
@@ -70,7 +70,7 @@ var education = {
 		"name": "Heriot-Watt University",
 		"location": "Heriot-Watt University, Edinburgh Campus, Edinburgh, Scotland Edinburgh Scotland EH14 4AS",
 		"degree": "B.Sc",
-		"major": ["Architectural Engineering"],
+		"majors": ["Architectural Engineering"],
 		"date": "1992",
 		"url": ["http://www.hw.ac.uk/undergraduate/architectural-engineering.htm"]
 		
@@ -79,7 +79,7 @@ var education = {
 		"name": "Limerick Institute Of Technology",
 		"location": "Limerick Institute Of Technology, Moylish Park, Limerick, Ireland.",
 		"degree": "Diploma",
-		"major": ["Architectural Engineering"],
+		"majors": ["Architectural Engineering"],
 		"date": "1992",
 		"url": ["http://www.lit.ie/Courses/LC241/default.aspx"]
 		
@@ -164,15 +164,15 @@ var work = {
 	},
 	{
 		"employer": "Bay Area Video Coalition",
-		"title": "Facility Manager",
-		"location": "2727 Mariposa St, San Francisco, CA 94110",
+		"title": "Facility Technician and Duplication Manager",
+		"location": "2727 Mariposa St San Francisco, CA 94110",
 		"dates": "03\/01 – 05\/03",
-		"description": "Responsible for the coordination of facility technical staff and equipment for workshops. Technology upgrading, ordering, installation,duplication and Restoration."
+		"description": "Responsible for the coordination of facility technical staff and equipment for workshops. Technology upgrading, ordering, installation, duplication and Restoration."
 	},              
 	{
 		"employer": "Pacific Video Resources",
-		"title": "Coordinator | Data I\/O",
-		"location": "2331 Third St, San Francisco, 94107",
+		"title": "Post Production Technician",
+		"location": "2331 3rd St San Francisco, CA 94107",
 		"dates": "06\/99 – 03\/01",
 		"description": "Facility Technician and Duplication Manager. Assistant Editing and graphics prep for online edits, graphics layoffs, troubleshooting, QC, maintenance and archiving assets on NLE. Avid’s and Discreet Smoke Systems."
 	}                                         
@@ -238,7 +238,7 @@ if(bio.skills.length > 0) {
 
 // WORK EXPERIENCE
 
-var displayWork = function() {
+work.display = function() {
 	for (job in work.jobs) {
 	  $("#workExperience").append(HTMLworkStart);
 
@@ -252,7 +252,7 @@ var displayWork = function() {
 		$(".work-entry:last").append(formattedJobs);
 	}
 }
-displayWork();
+work.display();
 
 // PROJECTS
 
@@ -284,7 +284,7 @@ education.display = function() {
       var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
       var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].date);
       var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-      var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+      var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
       var formattedEducation = formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajor;
       
       $(".education-entry:last").append(formattedEducation);
@@ -313,6 +313,8 @@ $(document).click(function(loc) {
 
   logClicks(x,y);
 });
+
+
 
 var inName = function(name) {
   var splitName = [];
