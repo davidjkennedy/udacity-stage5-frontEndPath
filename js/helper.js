@@ -104,7 +104,14 @@ function initializeMap() {
   var locations;
 
   var mapOptions = {
-    disableDefaultUI: true
+      panControl:true,
+      zoomControl:true,
+      mapTypeControl:true,
+      scaleControl:true,
+      streetViewControl:true,
+      overviewMapControl:true,
+      rotateControl:true,    
+      mapTypeId:google.maps.MapTypeId.HYBRID
   };
 
   /* 
@@ -132,6 +139,7 @@ function initializeMap() {
     // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
     education.schools.forEach(function(school){
       locations.push(school.location);
+
     });
 
     // iterates through work locations and appends each location to
@@ -169,8 +177,33 @@ function initializeMap() {
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: name
+      content: "Hello"
+      });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      infoWindow.open(map,marker);
+      });
+
+
+  function placeMarker(location) {
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map,
     });
+    var infoWindow = new google.maps.InfoWindow({
+      content: bio.contacts.location + education.schools[0].name + education.schools[0].location + education.schools[0].date
+    });
+    infoWindow.open(map,marker);
+  }
+
+
+
+
+
+
+
+
+
 
 // ****************************************************************************************
     // ADDED A SIMPLE CLICK EVENT 
@@ -232,9 +265,10 @@ function initializeMap() {
   // pinPoster(locations) creates pins on the map for each location in
   // the locations array
   pinPoster(locations);
+  console.log(bio.contacts.location);
 
 }
-
+ 
 /*
 Uncomment the code below when you're ready to implement a Google Map!
 */
@@ -248,4 +282,4 @@ window.addEventListener('resize', function(e) {
   //Make sure the map bounds get updated on page resize
  map.fitBounds(mapBounds);
 });
-// console.log(locations);
+// console.log(callback);

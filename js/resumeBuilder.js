@@ -1,40 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-// $("#main").append(["David Kennedy"]);
-
-// var firstName = "Daithi";
-// var age = 32;
-
-// console.log(firstName);
-
-// var awesomeThoughts = "My name is David and I am AWESOME!";
-// var funThoughts = awesomeThoughts.replace("AWESOME", "FUN");
-
-// console.log(awesomeThoughts);
-// console.log(funThoughts);
-
-// var email = "dkennedychicago@gmail.com";
-// var newEmail = email.replace("mac", "gmail");
-
-// console.log(email);
-// console.log(newEmail);
-
-// $("#main").append(funThoughts);
-
-// var skills = 
-// ["HTML5", "CSS3", "JS", "GAE", "Python" ];
-// $("#main").append(skills);
-// $("#main").append(skills[0]);
-// $("#main").append(skills.length);
-
-// var contact = 
-// ["www.dkennedychicago.com", "dkennedychicago@gmail.com", "1-(323)-599-1774", "www.linkedin.com/in/dkennedychicago", "www.vimeo.com/dkennedychicago" ];
-// $("#main").append(skills);
-// $("#main").append(skills[0]);
-// $("#main").append(contact.length);
-// ##########################################################################
-
 
 // bio object
 var bio = {
@@ -45,16 +8,19 @@ var bio = {
 		"email": "dkennedychicago@gmail.com",
 		"github": "dkennedychicago",
 		"twitter": "@dkennedychicago",
-		"location": "Chicago, Illinois 60614"
+		"location": "Chicago, Il 60614"
 	},
 	
-		"welcomeMessage": "I am interested in working in Front-End Development in the Chicago Tech Industry.",
+		"welcomeMessage": "I am interested in leaveraging my experience and skills in media and evolve as a Front-End Development in the Chicago Tech Industry.",
 		"skills": [
 			"VFX Editing", "Conforming", "Rotoscoping", "Data Wrangling"
 	],
-		"bioPic": "images/dk_profile_sm.jpg"	
+		"bioPic": ["images/dk_profile_sm2.jpg"],
+	
 }
+
 // education object
+
 var education = {
 	"schools": [
 	{
@@ -68,7 +34,7 @@ var education = {
 	},
 	{
 		"name": "Heriot-Watt University",
-		"location": "Heriot-Watt University, Edinburgh Campus, Edinburgh, Scotland Edinburgh Scotland EH14 4AS",
+		"location": "Heriot-Watt University, Edinburgh Scotland EH14 4AS",
 		"degree": "B.Sc",
 		"majors": ["Architectural Engineering"],
 		"date": "1992",
@@ -92,40 +58,21 @@ var education = {
 		"onlineTitle": "Udacity",
 		"onlineSchool": "Nanodegree",
 		"onlineDates": "2015-2016",
-		"onlineURL": ["https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"]
+		"onlineURL": ["https://www.udacity.com"]
 	}
 	]
 }
+
 // work object
+
 var work = {
 	"jobs": [
 	{
 		"employer": "Gradient Effects",
 		"title": "VFX Editor | I\/O Coordinator",
 		"location": "4120 Del Rey Avenue, Marina Del Rey 90292",
-		"dates": "03\/12 - 06\/14",
+		"dates": "03\/10 - 06\/14",
 		"description": "Contributed to the delivery of high quality VFX for Film and Broadcast projects, on time and within budget. Instrumental in helping to develop in-house tools to automate the shot ingest and delivery pipeline. On smaller projects served as the key liaison between production, editorial and the show producer and supervisor. Managed a database of achievements and priorities, keeping the client informed and the crew on task."
-	},
-	{
-		"employer": "Modern Video Film",
-		"title": "Data I/O",
-		"location": "2300 W Empire Ave, Burbank CA 91504",
-		"dates": "03\/11 - 09\/11",
-		"description": "Worked in this very busy Data I/O department. Cloning, loading and unloading drives, and LTOs. File format conversions, backups and checksums. Scanning and recording of film assets, and Qc'ing DI reels for film out."
-	},
-	{
-		"employer": "Scanline VFX LA",
-		"title": "I\/O Coordinator | VFX Editor",
-		"location": "12910 Culver Blvd # C, Los Angeles 90066",
-		"dates": "10\/11 - 02\/12",
-		"description": "Worked on \"The Immortals\" VFX at Scanline LA as I/O Coordinator & VFX Editor. Using Avid MC and FCP FTP and Shotgun Database management."
-	},
-	{
-		"employer": "Prime Focus Hollywood",
-		"title": "Roto \/ Tasking Artist",
-		"location": "1800 Vine St, Hollywood CA 90028",
-		"dates": "06\/10 - 08\/10",
-		"description": "Back at Prime this time as a tasking and Roto Artist for Cats and Dog Stereo Conversion, and Shrek BlueRay Stereo Conversion"
 	},
 	{
 		"employer": "Prologue Films",
@@ -135,25 +82,11 @@ var work = {
 		"description": "\“Titles Coordinator\” on \“Sherlock Holmes\” MT and MOE, Post Coordinator on HBO \"The Pacific\" Promo. Producer on HBO 24/7 Jimmy Johnson Broadcast GFX package. Associate Producer on 82nd Academy Awards Broadcast and Screen package. Coordinator on ESPN World Cup 2010 Broadcast Package."
 	},
 	{
-		"employer": "Prime Focus Hollywood",
-		"title": "Data I\/O | Render Wrangler",
-		"location": "1800 Vine St, Hollywood CA 90028",
-		"dates": "07\/09 - 10\/09",
-		"description": "Prime Focus completed eight shots for the feature The Tree of Life, and over eighty for Avatar. My role as a Render Wrangler was in monitoring, prioritizing and troubleshooting (when needed) jobs spread over the render nodes of Prime's Los Angeles, Vancouver and Winnipeg facilities."
-	},      
-	{
 		"employer": "Pacific Title & Art Studio",
 		"title": "DI Color Assistant",
 		"location": "2700 Santa Monica Blvd, Hollywood CA 90028",
 		"dates": "02\/07 - 07\/09",
 		"description": "As DI Assistant I supported Colorists, and Producers for Feature and Trailer Finishing. Note taking in DI sessions, and VFX screenings, updating cuts, monitoring renders, generating proxies, preparing film outs. QC, roto, dust busting, and secondary animation using Autodesk Lustre."
-	},
-	{
-		"employer": "Logan Media Inc",
-		"title": "Post Production Coordinator",
-		"location": "4221 redwood ave, Venice CA 90066",
-		"dates": "07\/09 – 10\/09",
-		"description": "Supporting both producers and creatives on fast turnaround commercial GFX projects. Day to Day Asset management. DVD Authoring, Web compression, and FTP support."
 	},
 	{
 		"employer": "yU+Co",
@@ -180,6 +113,7 @@ var work = {
 }
 
 // project object
+
 var projects = {
 	"projects": [
 	{
@@ -212,11 +146,11 @@ var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
-$("#topContacts").append(formattedMobile);
-$("#topContacts").append(formattedEmail);
-$("#topContacts").append(formattedTwitter);
-$("#topContacts").append(formattedGithub);
-$("#topContacts").append(formattedLocation);
+$("#footerContacts").append(formattedMobile);
+$("#footerContacts").append(formattedEmail);
+$("#footerContacts").append(formattedTwitter);
+$("#footerContacts").append(formattedGithub);
+$("#footerContacts").append(formattedLocation);
 $("#topContacts").append(formattedwelcomeMsg);
 $("#topContacts").append(formattedbioPic);
 
@@ -329,6 +263,7 @@ var inName = function(name) {
 $("#main").append(internationalizeButton);
 
 // MAP
+
 $("#mapDiv").append(googleMap);
 
 
