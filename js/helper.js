@@ -177,7 +177,8 @@ function initializeMap() {
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: "Hello"
+      content: Location,
+      maxWidth: 500
       });
 
     google.maps.event.addListener(marker, 'click', function() {
@@ -187,7 +188,7 @@ function initializeMap() {
 
   function placeMarker(location) {
     var marker = new google.maps.Marker({
-      position: location,
+      position: 'Hello',
       map: map,
     });
     var infoWindow = new google.maps.InfoWindow({
