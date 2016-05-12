@@ -23,6 +23,12 @@ h6 {
 .project-entry {
   padding: 0 5%;
 }
+#topContacts {
+  flex-direction: column;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex;
+}
 
 h1 {
   font-size: 40px;
@@ -101,7 +107,7 @@ a {
 
 #skills-h3 {
   color: #f5ae23;
-  display: none;
+  display: flex;
 }
 
 .orange {
@@ -149,13 +155,13 @@ ul {
   list-style-type: none;
 }
 
-.biopic {
+/*.biopic {
   float: left;
-  padding: 100px;
+  padding: 40px;
   width: 150px;
   height: 150px;
-/*  display: block;*/
-}
+
+}*/
 
 img {
   padding: 10px;
