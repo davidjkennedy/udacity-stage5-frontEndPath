@@ -151,14 +151,16 @@ $("#topContacts").append(formattedwelcomeMsg);
 $("#topContacts").append(formattedbioPic);
 
 // BIO - SKILLS AT A GLANCE
-
-if (bio.skills.length > 0) {
-    $("#header").append(HTMLskillsStart);
+bio.display = function() {
+    if (bio.skills.length > 0) {
+        $("#header").append(HTMLskillsStart);
+    }
+    for (var i = 0; i < bio.skills.length; i++) {
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
+    }
 }
-for (var i = 0; i < bio.skills.length; i++) {
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-    $("#skills").append(formattedSkill);
-}
+bio.display();
 
 // WORK EXPERIENCE
 work.display = function() {
