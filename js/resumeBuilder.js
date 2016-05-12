@@ -16,7 +16,7 @@ var bio = {
     "skills": [
         "VFX Editing", "Conforming", "Rotoscoping", "Data Wrangling"
     ],
-    "biopic": ["images/dk_profile_sm.jpg"],
+    "biopic": "images/dk_profile_sm.jpg",
     "display": "undefined"
 };
 
