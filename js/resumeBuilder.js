@@ -212,16 +212,15 @@ var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
 
-$("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
+$("#topContacts").prepend(formattedbioPic);
+$("#topContacts").prepend(formattedwelcomeMsg);
 $("#topContacts, #footerContacts").append(formattedMobile);
 $("#topContacts, #footerContacts").append(formattedEmail);
 $("#topContacts, #footerContacts").append(formattedTwitter);
 $("#topContacts, #footerContacts").append(formattedGithub);
 $("#topContacts, #footerContacts").append(formattedLocation);
-$("#topContacts").append(formattedwelcomeMsg);
-$("#topContacts").append(formattedbioPic);
-
 
 
 $(document).click(function(loc) {

@@ -177,32 +177,12 @@ function initializeMap() {
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: 'Hello',
+      content: name,
       });
 
     google.maps.event.addListener(marker, 'click', function() {
       infoWindow.open(map,marker);
       });
-
-
-  function placeMarker(location) {
-    var marker = new google.maps.Marker({
-      position: 'Hello',
-      map: map,
-    });
-    var infoWindow = new google.maps.InfoWindow({
-      content: bio.contacts.location + education.schools[0].name + education.schools[0].location + education.schools[0].date
-    });
-    infoWindow.open(map,marker);
-  }
-
-
-
-
-
-
-
-
 
 
 // ****************************************************************************************
