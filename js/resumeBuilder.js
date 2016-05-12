@@ -1,5 +1,7 @@
 // Whole-script strict mode syntax
 "use strict";
+
+
 // bio object
 var bio = {
     "name": "David Kennedy",
@@ -9,7 +11,7 @@ var bio = {
         "email": "dkennedychicago@gmail.com",
         "github": "dkennedychicago",
         "twitter": "@dkennedychicago",
-        "location": "Chicago, Illinois"
+        "location": "Chicago, Illinois. U.S.A."
     },
     "welcomeMessage": "I am interested transitioning into Front-End Development in " +
         "the Chicago Tech Industry.",
@@ -192,7 +194,13 @@ var projects = {
 
 };
 
-// CONTACT INFO
+
+bio.display();
+education.display();
+work.display();
+projects.display();
+
+// contact info
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -210,15 +218,10 @@ $("#topContacts, #footerContacts").append(formattedMobile);
 $("#topContacts, #footerContacts").append(formattedEmail);
 $("#topContacts, #footerContacts").append(formattedTwitter);
 $("#topContacts, #footerContacts").append(formattedGithub);
-$("#topContacts").append(formattedLocation);
+$("#topContacts, #footerContacts").append(formattedLocation);
 $("#topContacts").append(formattedwelcomeMsg);
 $("#topContacts").append(formattedbioPic);
 
-
-bio.display();
-education.display();
-work.display();
-projects.display();
 
 
 $(document).click(function(loc) {
