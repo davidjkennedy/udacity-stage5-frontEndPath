@@ -101,7 +101,7 @@ a {
 
 #skills-h3 {
   color: #f5ae23;
-  display: flex;
+  display: none;
 }
 
 .orange {
@@ -149,13 +149,13 @@ ul {
   list-style-type: none;
 }
 
-/*.biopic {
+.biopic {
   float: left;
-  padding: 40px;
-  width: 150px;
-  height: 150px;
-
-}*/
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+/*  display: flex;*/
+}
 
 img {
   padding: 10px;

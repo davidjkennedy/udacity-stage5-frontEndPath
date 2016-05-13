@@ -1,5 +1,5 @@
 // Whole-script strict mode syntax
-(function() { "use strict";
+"use strict";
 
 
 // bio object
@@ -246,5 +246,3 @@ $("#main").append(internationalizeButton);
 // MAP
 
 $("#mapDiv").append(googleMap);
-
-}());
