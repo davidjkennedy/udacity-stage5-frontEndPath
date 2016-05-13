@@ -1,17 +1,7 @@
-body,
-div,
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+*{
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .clear-fix {
@@ -101,7 +91,7 @@ a {
 
 #skills-h3 {
   color: #f5ae23;
-  display: none;
+  /*display: none;*/
 }
 
 .orange {
@@ -124,12 +114,12 @@ a {
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #1199c3;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #1199c3;
 }
 
 .flex-box {
@@ -153,8 +143,8 @@ ul {
   float: left;
   padding: 10px;
   width: 200px;
-  height: 200px;
-/*  display: flex;*/
+  display: none;
+  border-radius: 50%;
 }
 
 img {
@@ -163,6 +153,8 @@ img {
 
 span {
   padding: 5px;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 #lets-connect {
@@ -186,6 +178,7 @@ span {
 @media only screen and (max-width: 750px) {
   #lets-connect {
     margin-top: 10%;
+
   }
   .biopic {
     width: 150px;
@@ -210,7 +203,7 @@ span {
 @media only screen and (min-width: 750px) {
   #skills-h3,
   .biopic {
+    text-align: left;
     display: block;
-    border-radius: 50%;
   }
 }

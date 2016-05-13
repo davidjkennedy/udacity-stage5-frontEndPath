@@ -1,3 +1,7 @@
+// Whole-script strict mode syntax
+"use strict";
+
+
 // bio object
 var bio = {
     "name": "David Kennedy",
@@ -72,7 +76,7 @@ var education = {
         var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].date);
         var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
          }
-      var formattedonlineCourses = formattedonlineClasses + formattedonlineTitle + formattedonlineSchool + formattedonlineDates + formattedonlineURL;
+    var formattedonlineCourses = formattedonlineClasses + formattedonlineTitle + formattedonlineSchool + formattedonlineDates + formattedonlineURL;
 
     $(".education-entry:last").append(formattedonlineCourses);
 
@@ -159,13 +163,13 @@ var work = {
 var projects = {
     "projects": [{
         "title": "Cloud Atlas",
-        "dates": "2011 - 2012",
+        "dates": "2012",
         "description": "Worked as a VFX Editor on shots for Cloud Atlas where Gradient " +
             "was tasked with augmenting the eyes of Rose, played by Xun Zhou.",
         "images": ["images/projects/cloudAtlas/cloudAtlasPoster.jpg"]
     }, {
         "title": "Identity Thief",
-        "dates": "2012 - 2013",
+        "dates": "2013",
         "description": "VFX Editor and I/O Coordinator on this hit comedy feature",
         "images": ["images/projects/identityThief/identityThiefPoster.jpg"]
     }],
@@ -177,11 +181,11 @@ var projects = {
             var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title);
             var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
             var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
-                if (projects.projects[i].images.length > 0) {         
-                   for (var image in projects.projects[i].images) {
-                        formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[image]);
-                    }
+            if (projects.projects[i].images.length > 0) {         
+                for (var image in projects.projects[i].images) {
+                    formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[image]);
                 }
+            }
             var formattedProjects = formattedTitle + formattedDates + formattedDescription + formattedImage;
             $(".project-entry:last").append(formattedProjects);
         }
@@ -196,28 +200,27 @@ work.display();
 projects.display();
 
 // contact info
-function contacts() {
-  var formattedName = HTMLheaderName.replace("%data%", bio.name);
-  var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-  var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-  var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-  var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-  var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-  var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-  var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-  var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
-  
-  $("#header").prepend(formattedName);
-  $("#header").prepend(formattedRole);
-  $("#header").append(formattedbioPic);
-  $("#header").append(formattedwelcomeMsg);
-  $("#topContacts, #footerContacts").prepend(formattedMobile);
-  $("#topContacts, #footerContacts").prepend(formattedEmail);
-  $("#topContacts, #footerContacts").prepend(formattedTwitter);
-  $("#topContacts, #footerContacts").prepend(formattedGithub);
-  $("#topContacts, #footerContacts").prepend(formattedLocation);
-};
-contacts();  
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
+
+$("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
+$("#header").append(formattedbioPic);
+$("#header").append(formattedwelcomeMsg);
+$("#topContacts, #footerContacts").prepend(formattedMobile);
+$("#topContacts, #footerContacts").prepend(formattedEmail);
+$("#topContacts, #footerContacts").prepend(formattedTwitter);
+$("#topContacts, #footerContacts").prepend(formattedGithub);
+$("#topContacts, #footerContacts").prepend(formattedLocation);
+
 
 $(document).click(function(loc) {
     var x = loc.pageX;
