@@ -23,12 +23,6 @@ h6 {
 .project-entry {
   padding: 0 5%;
 }
-#topContacts {
-  flex-direction: column;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex;
-}
 
 h1 {
   font-size: 40px;

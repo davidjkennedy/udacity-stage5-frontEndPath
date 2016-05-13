@@ -1,5 +1,5 @@
 // Whole-script strict mode syntax
-"use strict";
+(function() { "use strict";
 
 
 // bio object
@@ -213,8 +213,8 @@ var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
 
 $("#header").prepend(formattedName);
 $("#header").prepend(formattedRole);
-$("#topContacts").append(formattedbioPic);
-$("#topContacts").append(formattedwelcomeMsg);
+$("#header").append(formattedbioPic);
+$("#header").append(formattedwelcomeMsg);
 $("#topContacts, #footerContacts").prepend(formattedMobile);
 $("#topContacts, #footerContacts").prepend(formattedEmail);
 $("#topContacts, #footerContacts").prepend(formattedTwitter);
@@ -246,3 +246,5 @@ $("#main").append(internationalizeButton);
 // MAP
 
 $("#mapDiv").append(googleMap);
+
+}());
